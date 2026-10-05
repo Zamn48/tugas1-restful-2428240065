@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
@@ -154,12 +154,12 @@ app.delete('/bus-routes/:id', (req, res) => {
         });
     }
 
-    const data = busRoutes.splice(index, 1)[0];
+    busRoutes.splice(index, 1);
 
     res.json({
         status: 'success',
-        message: 'Rute bus berhasil dihapus',
-        data: data
+        message: `Rute bus dengan id ${id} berhasil dihapus`,
+        data: null
     });
 });
 
@@ -172,6 +172,10 @@ app.use((req, res) => {
     });
 });
 
-app.listen(PORT, () => {
-    console.log(`Server berjalan di http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`Server berjalan di http://localhost:${PORT}`);
+    });
+}
+
+module.exports = app;
