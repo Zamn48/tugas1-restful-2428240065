@@ -42,3 +42,6 @@ tugas1-restful-2428240065/
 ├── vercel.json
 ├── .gitignore
 └── README.md
+## Catatan
+
+Data rute bus disimpan sementara menggunakan in-memory array dan tidak menggunakan database.

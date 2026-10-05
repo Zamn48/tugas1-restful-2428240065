@@ -1,7 +1,7 @@
 {
   "name": "tugas1-restful-2428240065",
   "version": "1.0.0",
-  "description": "",
+  "description": "RESTful API Rute Bus menggunakan Express.js untuk tugas praktikum SI5B",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
